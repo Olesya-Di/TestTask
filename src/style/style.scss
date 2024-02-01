@@ -1,0 +1,277 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  background: $background;
+  border: 1px solid;
+  border-radius: 12px;
+  gap: 46.5px;
+  height: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  max-width: 1306px;
+  width: 100%;
+  @include flexBox(column, stretch);
+  @include textPramery();
+}
+
+.header,
+.logo,
+.nav,
+.btnSign,
+.content,
+.title,
+.lineTop,
+.itemContent,
+.card:nth-child(2) .cardBtnBlock button {
+  @include flexBox();
+}
+
+.header {
+  justify-content: space-between;
+  gap: 87.23px;
+  height: 39px;
+  margin-top: 34.55px;
+  padding: 0 63.98px 0 48.37px;
+}
+
+.logo {
+  gap: 3.61px;
+  text-decoration: line-through;
+  width: 81.1px;
+  white-space: nowrap;
+  @include text(11.446px, 700);
+
+  img {
+    height: 15.658px;
+    width: 23.493px;
+  }
+}
+
+.nav {
+  flex-shrink: 1;
+  justify-content: space-between;
+  max-width: 428px;
+  width: 100%;
+
+  p a {
+    max-width: 430px;
+    text-decoration: none;
+    white-space: nowrap;
+    @include text(_, _, $colorSecondary);
+
+    @include hoverLink;
+  }
+}
+
+.btnSign {
+  flex-shrink: 2;
+  gap: 13.82px;
+  justify-content: end;
+  width: 100%;
+  white-space: nowrap;
+
+  button:first-child {
+    background: none;
+    border: none;
+    @include text(_, _, $colorSecondary);
+
+    @include hoverText;
+  }
+
+  button:last-child {
+    @include button(114px, $colorBorderRed, $backgroundRed);
+    @include text(12px, 500);
+  }
+}
+
+.main {
+  @include flexBox(column);
+}
+
+.title {
+  justify-content: center;
+  margin-bottom: 68.95px;
+  padding: 0 310px;
+  position: relative;
+  width: 100%;
+}
+
+.line {
+  left: 0;
+  position: absolute;
+  top: -20px;
+  width: 100%;
+}
+
+.lineTop {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  svg:first-child {
+    position: relative;
+    transform: rotate(2deg);
+    top: 10px;
+  }
+}
+
+.lineBottom {
+  position: absolute;
+  top: 48px;
+  svg {
+    width: 100%;
+  }
+}
+
+.h1 {
+  margin: 0;
+  max-width: 687px;
+  text-align: center;
+  @include text(41.455px, 600, _, normal);
+}
+
+.content {
+  justify-content: space-between;
+  margin: 0 0 99px 13.5px;
+  max-width: 970px;
+  position: relative;
+  width: 100%;
+}
+
+.card {
+  gap: 15.14px;
+  @include card($backgroundGreen, 592px, 333.84px, 37.848px 60px 28px 60px);
+  @include flexBox(column, flex-start);
+
+  &:nth-child(2) {
+    bottom: 33px;
+    left: 317.58px;
+    padding: 37.848px 60px 38px 60px;
+    position: absolute;
+    width: 334px;
+    z-index: 2;
+    @include card($backgroundDark, 600px, 334px, 37.848px 60px 38px 60px);
+  }
+}
+
+.h3 {
+  @include text(16px, 600, _, normal);
+}
+
+.price {
+  height: 40.7px;
+  opacity: 0;
+  @include flexBox(_, stretch);
+
+  &__currency {
+    cursor: pointer;
+    width: 8px;
+    @include text(11.354px, 500);
+
+    &:hover {
+      @include hoverText;
+    }
+  }
+
+  &__number {
+    margin-right: 4.73px;
+    @include text(37.848px, 800);
+  }
+
+  &__period {
+    align-self: flex-end;
+    cursor: pointer;
+    @include text(12px, _, $colorSecondary, normal);
+
+    &:hover {
+      @include hoverText;
+    }
+  }
+}
+
+.text {
+  margin-bottom: 35px;
+  @include text(12px, _, $colorSecondary, 140%);
+}
+
+.h4 {
+  margin: -5.14px 0 8.86px 0;
+  @include text(13.247px, 500);
+}
+
+.listContentCard1,
+.listContentCard2,
+.listContentCard3 {
+  gap: 15.14px;
+  @include flexBox(column, flex-start);
+}
+.itemContent {
+  gap: 7.57px;
+  @include text(12px, 500, $colorSecondary);
+}
+
+.listContentCard1 .itemContent:first-child,
+.listContentCard2 .itemContent:nth-child(4),
+.listContentCard2 .itemContent:nth-child(5),
+.listContentCard2 .itemContent:nth-child(6),
+.listContentCard3 .itemContent:nth-child(6),
+.listContentCard3 .itemContent:nth-child(7) {
+  @include text(13px, 500);
+}
+
+.cardBtnBlock {
+  height: 100%;
+  @include flexBox(_, flex-end);
+
+  button {
+    @include button(214px, $colorBorderGreen, $backgroundGreen);
+    @include text(12px, 500);
+
+    img {
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 65.967px;
+      flex-shrink: 0;
+      gap: 6.597px;
+      justify-content: center;
+      height: 16px;
+      padding: 3.298px;
+      width: 16px;
+      @include flexBox;
+    }
+  }
+}
+
+.card:nth-child(2) .cardBtnBlock button {
+  gap: 9.46px;
+  justify-content: center;
+  @include button(214px, $colorBorderRed, $backgroundRed);
+}
+
+.lineContent {
+  position: absolute;
+  right: 0;
+  top: 205px;
+}
+
+.price1 {
+  animation: see 3s ease-in-out forwards;
+}
+.price2 {
+  animation: see 3s forwards 1s;
+}
+.price3 {
+  animation: see 3s forwards 2s;
+}
+
+@keyframes see {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
