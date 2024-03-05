@@ -153,10 +153,16 @@
   }
   
   .nav {
-    gap: 8px;
-    max-width: 80%;
+    flex-direction: column;
+    z-index: 2;
+    background: #1d252b;
+    border-radius: 11.354px;
+    padding: 20px;
+    gap: 10px;
     position: absolute;
-    top: 50px;
+    top: 44px;
+    left: 390px;
+    max-width: 150px;
   }
 
   .card {

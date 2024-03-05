@@ -6,7 +6,6 @@
 
 .page {
   background: $background;
-  border: 1px solid;
   border-radius: 12px;
   gap: 46.5px;
   height: 100%;
@@ -16,6 +15,11 @@
   width: 100%;
   @include flexBox(column, stretch);
   @include textPramery();
+}
+
+body {
+  background: #6a994e;
+  z-index: -1;
 }
 
 .header,
